@@ -6,5 +6,5 @@ Roman Garipov's gpu_parallel.py from hogwild_inference
 ```bash
 export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
 # ^-- gpu_parallel will split these between workers
-python3 example_script.py --start 0 --end 128 --use_queue --script example_script.py --extra_args "--save_folder $SNAPSHOT_PATH"  # <-- pass any other args here
+python3 gpu_parallel.py --start 0 --end 128 --use_queue --script example_script.py --extra_args "--save_folder $SNAPSHOT_PATH"
 ```
