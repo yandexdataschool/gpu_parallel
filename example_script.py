@@ -62,8 +62,8 @@ def main():
         logger.info(f'Directory {args.save_folder} already exists')
 
     logger.info('Loading model and tokenizer')
-    tokenizer = AutoTokenizer.from_pretrained("unsloth/Llama-3.2-1B-Instruct")
-    model = AutoModelForCausalLM.from_pretrained("unsloth/Llama-3.2-1B-Instruct", device_map=device, torch_dtype='auto')
+    tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.2-1B-Instruct")
+    model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-3.2-1B-Instruct", device_map=device, torch_dtype='auto')
     dataset = load_dataset("GAIR/LIMO", split="train")  # <-- load the entire dataset for each worker to handle idx correctly
     local_tasks_solved = 0
 
